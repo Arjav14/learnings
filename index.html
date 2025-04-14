@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastering Robotics from Ground Up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Mastering Robotics from Ground Up</h1>
+        <p class="subtitle">Thynk limitless</p>
+        <img src="C:\Users\HP\OneDrive\Desktop\ros lecture series\images\Certificate.jpg" alt="Bidyut Logo" 
+        style="position: absolute; right: 20px; top: 8px; height: 110px; width: 200px; object-fit: fill;">
+    </header>
+
+    <div class="sidebar">
+        <nav class="sidebar-nav">
+            <h3>Course Outline</h3>
+            <ul>
+                <li><a href="#kernel" class="active">The Kernel</a></li>
+                <li><a href="#whats-linux">What's Linux?</a></li>
+                <li><a href="#os-comparison">OS Comparison</a></li>
+                <li><a href="#distro-families">Linux Distro Families</a></li>
+                <li><a href="#why-ubuntu">Why Ubuntu?</a></li>
+                <li><a href="#shell-filesystem">Shell & Filesystem</a></li>
+                <li><a href="#ros2">ROS 2 Framework</a></li>
+                <li><a href="#setup">Setting up ROS 2</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="sidebar-toggle"></div>
+
+    <div class="container">
+        <main>
+            <section id="kernel">
+                <h2>The Kernel</h2>
+                <p>Think of the kernel as the control center of your computer — the core that manages everything happening under the hood. When your programs need to use your keyboard, mouse, USB stick, or display, they don't talk to the hardware directly. They go through the kernel, which handles those requests efficiently.</p>
+                <img src="C:\Users\HP\OneDrive\Desktop\ros lecture series\images\kernel.jpg" alt="Kernel Architecture" style="max-width: 50%; height: auto; display: block; margin: 20px auto; border: 1px solid #ddd; border-radius: 4px;">
+                <p>It also decides which program gets access to the processor at what time, manages the hard disk, and responds to interrupts (like when you move your mouse or press a key). No matter what you're doing — from typing a document to running a robot — the kernel is quietly running the show.</p>
+            </section>
+
+            <section id="whats-linux">
+                <h2>What's Linux?</h2>
+                <p>Linux is a free and open-source kernel, built in 1991 by Linus Torvalds, and it eventually became the heart of many operating systems — we call them Linux distributions or distros. It was adopted by the GNU project to create a completely free alternative to Unix.</p>
+                <p>Today, Linux powers everything from servers and supercomputers to Android phones and robots. A full Linux-based system doesn't just include the kernel — it also has system tools, user libraries, and utilities that make it usable for both humans and programs.</p>
+            </section>
+
+            <section id="os-comparison">
+                <h2>Linux vs macOS vs Windows (from a robotics perspective)</h2>
+                <p>In robotics, Linux is king. Why? Because it's flexible, lightweight, secure, and most importantly, ROS (Robot Operating System) is built for it.</p>
+                
+                <p>Windows does get used, especially in industry or with simulation tools, and macOS lags behind mostly because it's locked into Apple's ecosystem and is quite expensive. Linux also has a strong command-line interface, open-source transparency, and a huge global community — all of which make it ideal for research, development, and deployment in robotics.</p>
+            </section>
+
+            <section id="distro-families">
+                <h2>The Linux Distro Families – Who's Who in the Penguin World</h2>
+                <p>There are a few major Linux families you should know:</p>
+                
+                <h3>Red Hat Family (e.g., Fedora, CentOS, RHEL)</h3>
+                <p>Built for business. Think of it like enterprise Linux — stable, secure, but not free in some cases. Uses the RPM package format with tools like dnf.</p>
+                
+                <h3>SUSE Family (e.g., openSUSE, SLES)</h3>
+                <p>Another enterprise-grade distro, focused on reliability. Uses the zypper package manager.</p>
+                
+                <h3>Debian Family (e.g., Debian, Ubuntu, Linux Mint)</h3>
+                <p>Community-driven, stable, and one of the most popular choices for robotics. Uses the apt package manager.</p>
+                <img src="C:\Users\HP\OneDrive\Desktop\ros lecture series\images\linux .jpg" alt="Linux Distribution Families" style="width: 80%; max-width: 600px; display: block; margin: 20px auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+
+            </section>
+
+            <section id="why-ubuntu">
+                <h2>Why Ubuntu Specifically?</h2>
+                <p>We mostly use Ubuntu in robotics for a few really good reasons:</p>
+                <ul>
+                    <li>ROS is made for Ubuntu, with official support and packages.</li>
+                    <li>Ubuntu LTS (Long Term Support) releases are rock-solid and supported for years.</li>
+                    <li>It works perfectly with tools like Gazebo, RViz, MoveIt, OpenCV, and TensorFlow.</li>
+                    <li>Has strong community support and loads of tutorials.</li>
+                    <li>Plays nicely with popular hardware like Raspberry Pi, Jetson, and Intel NUC.</li>
+                    <li>Great for both desktop development and embedded systems.</li>
+                </ul>
+            </section>
+
+            <section id="shell-filesystem">
+                <h2>Shell, Command Line, and Filesystem – Your Toolkit</h2>
+                <p>The Shell is a program that takes your typed commands and runs them. Ubuntu uses Bash by default. You can also try other shells like zsh or fish.</p>
+                
+                <p>The Command Line Interface (CLI) is how you interact with the shell — it's like talking to your robot or system in plain text. Type in commands, get things done.</p>
+                
+                <p>Ubuntu's Filesystem is structured like a tree, starting from the root directory /. Key folders include:</p>
+                <ul>
+                    <li><code>/home</code> – your personal files</li>
+                    <li><code>/etc</code> – config files</li>
+                    <li><code>/bin</code>, <code>/usr/bin</code> – essential commands</li>
+                    <li><code>/var</code> – log files</li>
+                    <li><code>/tmp</code> – temporary files</li>
+                </ul>
+                <p>Everything — files, folders, even hardware — is treated as a file in Linux.</p>
+            </section>
+
+            <section id="ros2">
+                <h2>ROS 2 – The Robot Brain Framework</h2>
+                <p>Finally, ROS 2 (Robot Operating System 2) is the go-to middleware for robotics. It helps us connect different parts of the robot's software, from sensors to controllers, using a modular, plug-and-play system. It supports:</p>
+                <ul>
+                    <li>Real-time control</li>
+                    <li>Multi-robot setups</li>
+                    <li>Secure communication</li>
+                    <li>Flexible design using DDS for reliable messaging</li>
+                </ul>
+                <p>Whether you're programming a drone, rover, or robotic arm — ROS 2 helps you scale and manage your robot's "brain" with ease.</p>
+            </section>
+
+            <section id="setup">
+                <h2>Setting-up ROS 2</h2>
+                <p>For the Installation of ROS 2 Humble on Ubuntu Jammy Jellyfish 22.04 we'll refer to:</p>
+                <p><a href="https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html" target="_blank">https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html</a></p>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2025 Bidyut Innovation. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="js.js"></script>
+</body>
+</html>
